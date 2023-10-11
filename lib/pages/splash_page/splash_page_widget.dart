@@ -61,7 +61,7 @@ class _SplashPageWidgetState extends State<SplashPageWidget> {
           child: Align(
             alignment: AlignmentDirectional(0.00, 0.00),
             child: Text(
-              'FindGift',
+              'Hello',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'SF Pro Display',
                     color: FlutterFlowTheme.of(context).grayscaleblack,
