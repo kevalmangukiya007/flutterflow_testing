@@ -29,12 +29,12 @@ class _SplashPageWidgetState extends State<SplashPageWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      await GuestRegisterCall.call();
       await actions.newCustomAction(
-        () async {
-          context.pushNamed('HomePage');
-        },
+        () async {},
       );
+      _model.apiResult3zh = await GuestRegisterCall.call();
+
+      context.pushNamed('HomePage');
     });
   }
 
