@@ -28,7 +28,7 @@ class _SplashPageWidgetState extends State<SplashPageWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       context.pushNamed(
-        'homePage',
+        'null',
         extra: <String, dynamic>{
           kTransitionInfoKey: TransitionInfo(
             hasTransition: true,

@@ -47,26 +47,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'SplashPage',
           path: '/splashPage',
           builder: (context, params) => SplashPageWidget(),
-        ),
-        FFRoute(
-          name: 'homePage',
-          path: '/homePage',
-          builder: (context, params) => HomePageWidget(),
-        ),
-        FFRoute(
-          name: 'timlinePage',
-          path: '/timlinePage',
-          builder: (context, params) => TimlinePageWidget(),
-        ),
-        FFRoute(
-          name: 'notificationPage',
-          path: '/notificationPage',
-          builder: (context, params) => NotificationPageWidget(),
-        ),
-        FFRoute(
-          name: 'profilePage',
-          path: '/profilePage',
-          builder: (context, params) => ProfilePageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
