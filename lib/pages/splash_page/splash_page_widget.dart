@@ -58,18 +58,46 @@ class _SplashPageWidgetState extends State<SplashPageWidget> {
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         body: SafeArea(
           top: true,
-          child: Align(
-            alignment: AlignmentDirectional(0.00, 0.00),
-            child: Text(
-              'FindGift',
-              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'SF Pro Display',
-                    color: FlutterFlowTheme.of(context).grayscaleblack,
-                    fontSize: 49.0,
-                    fontWeight: FontWeight.bold,
-                    useGoogleFonts: false,
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Align(
+                alignment: AlignmentDirectional(0.00, 0.00),
+                child: Text(
+                  'FindGift',
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'SF Pro Display',
+                        color: FlutterFlowTheme.of(context).grayscaleblack,
+                        fontSize: 49.0,
+                        fontWeight: FontWeight.bold,
+                        useGoogleFonts: false,
+                      ),
+                ),
+              ),
+              FFButtonWidget(
+                onPressed: () {
+                  print('Button pressed ...');
+                },
+                text: 'Button',
+                options: FFButtonOptions(
+                  height: 40.0,
+                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                  iconPadding:
+                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  color: FlutterFlowTheme.of(context).primary,
+                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                        fontFamily: 'Readex Pro',
+                        color: Colors.white,
+                      ),
+                  elevation: 3.0,
+                  borderSide: BorderSide(
+                    color: Colors.transparent,
+                    width: 1.0,
                   ),
-            ),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+              ),
+            ],
           ),
         ),
       ),
