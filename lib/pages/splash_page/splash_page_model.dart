@@ -14,7 +14,9 @@ class SplashPageModel extends FlutterFlowModel<SplashPageWidget> {
 
   final unfocusNode = FocusNode();
   // Stores action output result for [Backend Call - API (guestRegister)] action in SplashPage widget.
-  ApiCallResponse? apiResult3zh;
+  ApiCallResponse? response;
+  // Stores action output result for [Backend Call - API (guestLogin)] action in SplashPage widget.
+  ApiCallResponse? apiResultfu9;
 
   /// Initialization and disposal methods.
 

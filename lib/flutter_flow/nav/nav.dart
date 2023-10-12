@@ -46,7 +46,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'SplashPage',
           path: '/splashPage',
-          builder: (context, params) => SplashPageWidget(),
+          builder: (context, params) => SplashPageWidget(
+            message: params.getParam('message', ParamType.bool),
+          ),
         ),
         FFRoute(
           name: 'HomePage',

@@ -6,11 +6,9 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-Future newCustomAction(Future<dynamic> Function()? sendScreen) async {
-  Future.delayed(
-    Duration(seconds: 3),
-    () {
-      sendScreen!();
-    },
-  );
+Future newCustomAction(
+  BuildContext context,
+  Future<dynamic> Function() send,
+) async {
+  Future.delayed(Duration(seconds: 3), send);
 }

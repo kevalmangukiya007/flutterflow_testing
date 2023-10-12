@@ -11,7 +11,13 @@ import 'splash_page_model.dart';
 export 'splash_page_model.dart';
 
 class SplashPageWidget extends StatefulWidget {
-  const SplashPageWidget({Key? key}) : super(key: key);
+  const SplashPageWidget({
+    Key? key,
+    bool? message,
+  })  : this.message = message ?? false,
+        super(key: key);
+
+  final bool message;
 
   @override
   _SplashPageWidgetState createState() => _SplashPageWidgetState();
@@ -30,11 +36,37 @@ class _SplashPageWidgetState extends State<SplashPageWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await actions.newCustomAction(
-        () async {},
-      );
-      _model.apiResult3zh = await GuestRegisterCall.call();
+        context,
+        () async {
+          var _shouldSetState = false;
+          _model.response = await GuestRegisterCall.call();
+          _shouldSetState = true;
+          if ((_model.response?.succeeded ?? true)) {
+            _model.apiResultfu9 = await GuestLoginCall.call();
+            _shouldSetState = true;
+            if (widget.message) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    widget.message.toString(),
+                    style: TextStyle(
+                      color: FlutterFlowTheme.of(context).primaryText,
+                    ),
+                  ),
+                  duration: Duration(milliseconds: 4000),
+                  backgroundColor: FlutterFlowTheme.of(context).secondary,
+                ),
+              );
 
-      context.pushNamed('HomePage');
+              context.pushNamed('HomePage');
+            } else {
+              return;
+            }
+          } else {
+            return;
+          }
+        },
+      );
     });
   }
 
