@@ -1,4 +1,4 @@
-# findgift
+# FindGiftDemo
 
 A new Flutter project.
 
